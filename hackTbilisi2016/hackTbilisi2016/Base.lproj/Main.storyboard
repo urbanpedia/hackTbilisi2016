@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VHG-l2-59z">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VHG-l2-59z">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--MyoText-->
+        <!--Myo Feed-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TextFeedViewController" customModule="hackTbilisi2016" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,6 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FiD-sM-0dK">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myoRow" id="if0-U0-suV" customClass="TextFeedTableViewCell" customModule="hackTbilisi2016" customModuleProvider="target">
@@ -30,40 +29,33 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you my dear friend, you are nice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxa-cY-UnR">
-                                                    <rect key="frame" x="8" y="8" width="304" height="25"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="19"/>
+                                                    <rect key="frame" x="8" y="8" width="304" height="26"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kn5-eO-0nE">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kn5-eO-0nE">
                                                     <rect key="frame" x="8" y="37" width="304" height="30"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mov1_black" translatesAutoresizingMaskIntoConstraints="NO" id="X1Z-cC-Brp">
                                                             <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
-                                                            <animations/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mov1_black" translatesAutoresizingMaskIntoConstraints="NO" id="l3D-Wa-M1m">
                                                             <rect key="frame" x="30" y="0.0" width="30" height="30"/>
-                                                            <animations/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mov1_black" translatesAutoresizingMaskIntoConstraints="NO" id="JKh-bj-rE3">
                                                             <rect key="frame" x="59" y="0.0" width="30" height="30"/>
-                                                            <animations/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mov1_black" translatesAutoresizingMaskIntoConstraints="NO" id="UXW-gF-P7F">
                                                             <rect key="frame" x="91" y="0.0" width="30" height="30"/>
-                                                            <animations/>
                                                         </imageView>
                                                     </subviews>
-                                                    <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Hrv-MJ-Uqo"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="Oxa-cY-UnR" firstAttribute="top" secondItem="nNk-aL-vSB" secondAttribute="top" constant="8" id="4H8-jb-zIP"/>
                                                 <constraint firstItem="Kn5-eO-0nE" firstAttribute="leading" secondItem="nNk-aL-vSB" secondAttribute="leading" constant="8" id="925-Sb-jj3"/>
@@ -73,7 +65,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="Oxa-cY-UnR" secondAttribute="trailing" constant="8" id="stl-XW-bO4"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <animations/>
                                         <connections>
                                             <outlet property="feedLabel" destination="Oxa-cY-UnR" id="Hbi-rv-WXv"/>
                                             <outlet property="imageWrapper" destination="Kn5-eO-0nE" id="Jgz-9Q-eO9"/>
@@ -86,7 +77,6 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="FiD-sM-0dK" secondAttribute="trailing" id="22v-z7-k4g"/>
@@ -95,12 +85,17 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FiD-sM-0dK" secondAttribute="bottom" id="yoi-4o-svQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MyoText" id="dz6-SU-K9p">
-                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="wiT-Od-TRo"/>
+                    <navigationItem key="navigationItem" title="Myo Feed" id="dz6-SU-K9p">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="wiT-Od-TRo">
+                            <connections>
+                                <action selector="GoToCreate:" destination="BYZ-38-t0r" id="hbP-na-0Be"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="FiD-sM-0dK" id="36P-V2-xRu"/>
+                        <segue destination="wlh-tm-lcb" kind="push" identifier="create" id="bqF-Ld-Qb5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -116,7 +111,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lzP-XY-sXS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -126,6 +120,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgR-Xd-TEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-169" y="1020"/>
+        </scene>
+        <!--CreateOrEdit-->
+        <scene sceneID="uny-Ta-zwh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateOrEdit" id="wlh-tm-lcb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BGP-Zd-cq9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UCD-QC-9kX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670.5" y="862"/>
         </scene>
     </scenes>
     <resources>

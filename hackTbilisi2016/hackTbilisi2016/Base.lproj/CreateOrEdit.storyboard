@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g2a-De-9ap">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Create-->
+        <scene sceneID="wgH-ZW-PeU">
+            <objects>
+                <viewController id="g2a-De-9ap" customClass="CreateOrEditViewController" customModule="hackTbilisi2016" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q1V-tD-T5y"/>
+                        <viewControllerLayoutGuide type="bottom" id="jz2-mh-Bpc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nxS-7T-hRy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEz-L9-Bz9">
+                                <rect key="frame" x="0.0" y="64" width="320" height="180"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="hSL-du-RWa"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAz-BR-id5">
+                                <rect key="frame" x="0.0" y="436" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem image="mov" id="h1z-v2-6h7">
+                                        <connections>
+                                            <action selector="addActionImage:" destination="g2a-De-9ap" id="Bfv-yP-bRa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Q9x-OF-64x"/>
+                                    <barButtonItem tag="1" image="mov" id="V5X-Mf-DhI">
+                                        <connections>
+                                            <action selector="addActionImage:" destination="g2a-De-9ap" id="LCK-Wq-pIe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Owt-Nj-IqZ"/>
+                                    <barButtonItem tag="2" image="mov" id="LyO-xN-l0J">
+                                        <connections>
+                                            <action selector="addActionImage:" destination="g2a-De-9ap" id="6NS-3n-uSq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="c79-yI-YuB"/>
+                                    <barButtonItem tag="3" image="mov" id="tZL-CQ-beE">
+                                        <connections>
+                                            <action selector="addActionImage:" destination="g2a-De-9ap" id="gza-Rt-wxc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6um-rP-VGe">
+                                <rect key="frame" x="0.0" y="244" width="320" height="192"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bAz-BR-id5" secondAttribute="trailing" id="8zz-8s-92p"/>
+                            <constraint firstItem="6um-rP-VGe" firstAttribute="leading" secondItem="nxS-7T-hRy" secondAttribute="leading" id="Db1-mS-pVd"/>
+                            <constraint firstItem="CEz-L9-Bz9" firstAttribute="leading" secondItem="nxS-7T-hRy" secondAttribute="leading" id="GGs-gP-ym4"/>
+                            <constraint firstItem="bAz-BR-id5" firstAttribute="top" secondItem="6um-rP-VGe" secondAttribute="bottom" id="VrT-WM-NfZ"/>
+                            <constraint firstAttribute="trailing" secondItem="6um-rP-VGe" secondAttribute="trailing" id="WMm-ki-rxe"/>
+                            <constraint firstAttribute="trailing" secondItem="CEz-L9-Bz9" secondAttribute="trailing" id="X6m-lh-vxY"/>
+                            <constraint firstItem="jz2-mh-Bpc" firstAttribute="top" secondItem="bAz-BR-id5" secondAttribute="bottom" id="h3q-6P-PfU"/>
+                            <constraint firstItem="6um-rP-VGe" firstAttribute="top" secondItem="CEz-L9-Bz9" secondAttribute="bottom" id="n1O-1C-ycC"/>
+                            <constraint firstItem="bAz-BR-id5" firstAttribute="leading" secondItem="nxS-7T-hRy" secondAttribute="leading" id="nAk-2m-8xN"/>
+                            <constraint firstItem="CEz-L9-Bz9" firstAttribute="top" secondItem="q1V-tD-T5y" secondAttribute="bottom" id="rbs-zf-TvF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create" id="rPW-TT-i2S">
+                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="save" id="tdf-7a-hEP">
+                            <connections>
+                                <action selector="Save:" destination="g2a-De-9ap" id="Roe-8u-Tdf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="imageWrapper" destination="6um-rP-VGe" id="hBc-V2-dp0"/>
+                        <outlet property="inputTextView" destination="CEz-L9-Bz9" id="dCj-Of-GdE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XO-Zm-5MK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="670" y="1020"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mov" width="22" height="22"/>
+    </resources>
+</document>
