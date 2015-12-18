@@ -17,61 +17,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEz-L9-Bz9">
-                                <rect key="frame" x="0.0" y="64" width="320" height="180"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tR6-XD-c0h">
+                                <rect key="frame" x="0.0" y="64" width="320" height="372"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="owZ-3s-rg4">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="186"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEz-L9-Bz9">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="186"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </string>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="CEz-L9-Bz9" secondAttribute="bottom" id="3bE-me-5iQ"/>
+                                            <constraint firstItem="CEz-L9-Bz9" firstAttribute="leading" secondItem="owZ-3s-rg4" secondAttribute="leading" id="H8s-CZ-1eB"/>
+                                            <constraint firstItem="CEz-L9-Bz9" firstAttribute="top" secondItem="owZ-3s-rg4" secondAttribute="top" id="rb0-ql-Cyr"/>
+                                            <constraint firstAttribute="trailing" secondItem="CEz-L9-Bz9" secondAttribute="trailing" id="t2i-e6-gUn"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="3bE-me-5iQ"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dc3-y5-sMH">
+                                        <rect key="frame" x="0.0" y="186" width="320" height="186"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6um-rP-VGe">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="186"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="6um-rP-VGe" secondAttribute="trailing" id="9Nr-H2-yfD"/>
+                                            <constraint firstItem="6um-rP-VGe" firstAttribute="top" secondItem="dc3-y5-sMH" secondAttribute="top" id="H96-v5-yTf"/>
+                                            <constraint firstItem="6um-rP-VGe" firstAttribute="leading" secondItem="dc3-y5-sMH" secondAttribute="leading" id="KB1-Pm-Xzo"/>
+                                            <constraint firstAttribute="bottom" secondItem="6um-rP-VGe" secondAttribute="bottom" id="atf-1H-Wmn"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="owZ-3s-rg4" firstAttribute="leading" secondItem="tR6-XD-c0h" secondAttribute="leading" id="Ae3-cL-QfY"/>
+                                    <constraint firstAttribute="trailing" secondItem="dc3-y5-sMH" secondAttribute="trailing" id="BfY-QZ-kB7"/>
+                                    <constraint firstItem="dc3-y5-sMH" firstAttribute="leading" secondItem="tR6-XD-c0h" secondAttribute="leading" id="JaM-gb-iOK"/>
+                                    <constraint firstAttribute="trailing" secondItem="owZ-3s-rg4" secondAttribute="trailing" id="fS3-r3-9fk"/>
+                                </constraints>
+                            </stackView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWq-9i-S5I">
+                                <rect key="frame" x="130" y="400" width="60" height="30"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="hSL-du-RWa"/>
+                                    <constraint firstAttribute="width" constant="60" id="1Wb-qb-enl"/>
+                                    <constraint firstAttribute="height" constant="30" id="8rw-f9-9aJ"/>
                                 </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </string>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="removeLastImage:" destination="g2a-De-9ap" eventType="touchUpInside" id="LQB-07-rUe"/>
+                                </connections>
+                            </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAz-BR-id5">
                                 <rect key="frame" x="0.0" y="436" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem image="mov" id="h1z-v2-6h7">
+                                    <barButtonItem tag="1" image="action1" id="h1z-v2-6h7">
                                         <connections>
                                             <action selector="addActionImage:" destination="g2a-De-9ap" id="Bfv-yP-bRa"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Q9x-OF-64x"/>
-                                    <barButtonItem tag="1" image="mov" id="V5X-Mf-DhI">
+                                    <barButtonItem tag="2" image="action2" id="V5X-Mf-DhI">
                                         <connections>
                                             <action selector="addActionImage:" destination="g2a-De-9ap" id="LCK-Wq-pIe"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Owt-Nj-IqZ"/>
-                                    <barButtonItem tag="2" image="mov" id="LyO-xN-l0J">
+                                    <barButtonItem tag="3" image="action3" id="LyO-xN-l0J">
                                         <connections>
                                             <action selector="addActionImage:" destination="g2a-De-9ap" id="6NS-3n-uSq"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="c79-yI-YuB"/>
-                                    <barButtonItem tag="3" image="mov" id="tZL-CQ-beE">
+                                    <barButtonItem tag="4" image="action4" id="tZL-CQ-beE">
                                         <connections>
                                             <action selector="addActionImage:" destination="g2a-De-9ap" id="gza-Rt-wxc"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6um-rP-VGe">
-                                <rect key="frame" x="0.0" y="244" width="320" height="192"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bAz-BR-id5" secondAttribute="trailing" id="8zz-8s-92p"/>
-                            <constraint firstItem="6um-rP-VGe" firstAttribute="leading" secondItem="nxS-7T-hRy" secondAttribute="leading" id="Db1-mS-pVd"/>
-                            <constraint firstItem="CEz-L9-Bz9" firstAttribute="leading" secondItem="nxS-7T-hRy" secondAttribute="leading" id="GGs-gP-ym4"/>
-                            <constraint firstItem="bAz-BR-id5" firstAttribute="top" secondItem="6um-rP-VGe" secondAttribute="bottom" id="VrT-WM-NfZ"/>
-                            <constraint firstAttribute="trailing" secondItem="6um-rP-VGe" secondAttribute="trailing" id="WMm-ki-rxe"/>
-                            <constraint firstAttribute="trailing" secondItem="CEz-L9-Bz9" secondAttribute="trailing" id="X6m-lh-vxY"/>
-                            <constraint firstItem="jz2-mh-Bpc" firstAttribute="top" secondItem="bAz-BR-id5" secondAttribute="bottom" id="h3q-6P-PfU"/>
-                            <constraint firstItem="6um-rP-VGe" firstAttribute="top" secondItem="CEz-L9-Bz9" secondAttribute="bottom" id="n1O-1C-ycC"/>
-                            <constraint firstItem="bAz-BR-id5" firstAttribute="leading" secondItem="nxS-7T-hRy" secondAttribute="leading" id="nAk-2m-8xN"/>
-                            <constraint firstItem="CEz-L9-Bz9" firstAttribute="top" secondItem="q1V-tD-T5y" secondAttribute="bottom" id="rbs-zf-TvF"/>
+                            <constraint firstItem="tR6-XD-c0h" firstAttribute="trailing" secondItem="bAz-BR-id5" secondAttribute="trailing" id="0q2-Fi-TXZ"/>
+                            <constraint firstItem="IWq-9i-S5I" firstAttribute="bottom" secondItem="bAz-BR-id5" secondAttribute="bottom" constant="-50" id="1tL-yo-5xN"/>
+                            <constraint firstItem="jz2-mh-Bpc" firstAttribute="top" secondItem="bAz-BR-id5" secondAttribute="bottom" id="3IM-GT-qU3"/>
+                            <constraint firstAttribute="trailing" secondItem="bAz-BR-id5" secondAttribute="trailing" id="AtC-KD-Yq2"/>
+                            <constraint firstItem="tR6-XD-c0h" firstAttribute="leading" secondItem="bAz-BR-id5" secondAttribute="leading" id="CrA-AC-FC2"/>
+                            <constraint firstItem="IWq-9i-S5I" firstAttribute="centerX" secondItem="nxS-7T-hRy" secondAttribute="centerX" id="MdS-rX-HIF"/>
+                            <constraint firstItem="tR6-XD-c0h" firstAttribute="bottom" secondItem="bAz-BR-id5" secondAttribute="bottom" constant="-44" id="mfF-h1-k7j"/>
+                            <constraint firstItem="tR6-XD-c0h" firstAttribute="top" secondItem="q1V-tD-T5y" secondAttribute="bottom" id="oSj-h6-RXv"/>
+                            <constraint firstItem="bAz-BR-id5" firstAttribute="leading" secondItem="nxS-7T-hRy" secondAttribute="leading" id="pFU-rc-Mvn"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Create" id="rPW-TT-i2S">
@@ -86,6 +133,7 @@
                     <connections>
                         <outlet property="imageWrapper" destination="6um-rP-VGe" id="hBc-V2-dp0"/>
                         <outlet property="inputTextView" destination="CEz-L9-Bz9" id="dCj-Of-GdE"/>
+                        <outlet property="removeButton" destination="IWq-9i-S5I" id="mfL-W5-Heo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8XO-Zm-5MK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -94,6 +142,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="mov" width="22" height="22"/>
+        <image name="action1" width="22" height="22"/>
+        <image name="action2" width="22" height="22"/>
+        <image name="action3" width="22" height="22"/>
+        <image name="action4" width="22" height="22"/>
     </resources>
 </document>
