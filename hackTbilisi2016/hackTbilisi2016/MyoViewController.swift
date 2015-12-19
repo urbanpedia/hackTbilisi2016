@@ -1,5 +1,6 @@
 import UIKit
 import Parse
+import Gifu
 import AVFoundation
 
 class MyoViewController: UIViewController {
@@ -10,27 +11,27 @@ class MyoViewController: UIViewController {
     var myUtterance = AVSpeechUtterance(string: "")
     var actions = [Int]()
     var isLocked = false
+    var imageView: AnimatableImageView!
+    let gifs = ["wave-in.gif", "wave-out.gif", "double-tap.gif", "finger-spread.gif", "fist.gif"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         makeBlur()
         installNSNotifications()
-        
-        UIView.animateWithDuration(4.0,
-            delay: 0,
-            options: [UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: { () -> Void in
-                self.backgroundImage.transform = CGAffineTransformMakeScale(0.5, 0.5)
-            }) { (bool: Bool) -> Void in
-                
-        }
+//        NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "updateImageGif", userInfo: nil, repeats: true)
+    }
+    
+    deinit {
+        imageView.removeFromSuperview()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewDidAppear(animated: Bool) {
-//        textToSpeach("rogor khar megobaro")
+    func updateImageGif() {
+        let name = Int(arc4random_uniform(5))
+        imageView.animateWithImage(named: gifs[name])
     }
     
     @IBAction func goToSettings(sender: UIBarButtonItem) {
@@ -164,11 +165,18 @@ class MyoViewController: UIViewController {
     }
     
     private func makeBlur() {
-//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurEffectView.frame = view.bounds
-//        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-//        backgroundImage.addSubview(blurEffectView)
+        imageView = AnimatableImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 255))
+        imageView.center = view.center
+        imageView.animateWithImage(named: "wave-in.gif")
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
+        imageView.alpha = 1
+        
+        let alfaView = UIView(frame: view.bounds)
+        alfaView.alpha = 0.5
+        alfaView.backgroundColor = UIColor.whiteColor()
+        
+        view.addSubview(imageView)
+        view.addSubview(alfaView)
     }
     
     private func installNSNotifications() {

@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myobackground" translatesAutoresizingMaskIntoConstraints="NO" id="rhJ-y2-9Wt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rhJ-y2-9Wt">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mB-pJ-Xuz">
@@ -88,6 +88,5 @@
     <resources>
         <image name="db_tap" width="240" height="200"/>
         <image name="myo" width="22" height="22"/>
-        <image name="myobackground" width="498" height="498"/>
     </resources>
 </document>
