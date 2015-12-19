@@ -1,22 +1,47 @@
 import UIKit
 import Parse
+import WatchConnectivity
 
 protocol CreateOrEditDelegate: class {
     func CreateOrEditDidFinish(controller: CreateOrEditViewController, model: FeedModel)
 }
 
-class TextFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CreateOrEditDelegate {
+class TextFeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CreateOrEditDelegate, WCSessionDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var model = [FeedModel]()
+    var wcSession: WCSession!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
+        initialWCSession()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private func initialWCSession() {
+        if WCSession.isSupported() {
+            wcSession = WCSession.defaultSession()
+            wcSession.delegate = self
+            wcSession.activateSession()
+        }
+        else {
+            print("installed")
+        }
+        
+        sendMessageToWC()
+    }
+    
+    private func sendMessageToWC() {
+        wcSession.sendMessage(["message" : "text to displey"],
+            replyHandler: { (data: [String : AnyObject]) -> Void in
+                print("done message sending")
+            }) { (error: NSError) -> Void in
+                print(error.localizedDescription)
+        }
     }
     
     private func loadData() {

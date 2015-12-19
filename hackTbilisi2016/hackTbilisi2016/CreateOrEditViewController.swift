@@ -61,6 +61,7 @@ class CreateOrEditViewController: UIViewController, UITextViewDelegate {
     @IBAction func removeLastImage(sender: UIButton) {
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         let subViewSize = imageWrapper.subviews.count
+        print(subViewSize)
         if subViewSize > 0 {
             UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 self.imageWrapper.subviews.last!.frame.origin.x = self.imageWrapper.frame.width
@@ -77,24 +78,27 @@ class CreateOrEditViewController: UIViewController, UITextViewDelegate {
 
     // add action image to view
     @IBAction func addActionImage(sender: UIBarButtonItem) {
-        UIApplication.sharedApplication().beginIgnoringInteractionEvents()
-        let index = sender.tag
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-        imageView.alpha = 0
-        imageView.contentMode = UIViewContentMode.ScaleAspectFill
-        imageView.image = UIImage(named: "move\(index)")
-        imageView.tag = index
-        let children = imageWrapper.subviews.count
-        imageWrapper.addSubview(imageView)
-        imageView.center = imageWrapper.center
-        imageView.frame.origin.x = imageWrapper.frame.width
-        
-        UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+        let subViewSize = imageWrapper.subviews.count
+        if subViewSize < 5 {
+            UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+            let index = sender.tag
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+            imageView.alpha = 0
+            imageView.contentMode = UIViewContentMode.ScaleAspectFill
+            imageView.image = UIImage(named: "move\(index)")
+            imageView.tag = index
+            let children = imageWrapper.subviews.count
+            imageWrapper.addSubview(imageView)
+            imageView.center = imageWrapper.center
+            imageView.frame.origin.x = imageWrapper.frame.width
+            
+            UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 imageView.frame.origin.x = CGFloat(children * 51)
                 imageView.alpha = 1
                 self.removeButton.hidden = false
-            }) { (bool: Bool) -> Void in
-                UIApplication.sharedApplication().endIgnoringInteractionEvents()
+                }) { (bool: Bool) -> Void in
+                    UIApplication.sharedApplication().endIgnoringInteractionEvents()
+            }
         }
     }
     

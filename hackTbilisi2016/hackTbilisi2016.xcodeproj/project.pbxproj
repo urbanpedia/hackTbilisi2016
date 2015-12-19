@@ -37,6 +37,16 @@
 		395FA1A01C253D1700D7FCD0 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395FA19F1C253D1700D7FCD0 /* MyoKit.framework */; };
 		395FA1A21C253D2E00D7FCD0 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395FA1A11C253D2E00D7FCD0 /* CoreBluetooth.framework */; };
 		395FA1A71C25518500D7FCD0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395FA1A61C25518500D7FCD0 /* AVFoundation.framework */; };
+		39DD856B1C25AB660061AD61 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39DD85691C25AB660061AD61 /* Interface.storyboard */; };
+		39DD856D1C25AB660061AD61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39DD856C1C25AB660061AD61 /* Assets.xcassets */; };
+		39DD85741C25AB660061AD61 /* hackTbilisiWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 39DD85731C25AB660061AD61 /* hackTbilisiWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		39DD857B1C25AB660061AD61 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DD857A1C25AB660061AD61 /* InterfaceController.swift */; };
+		39DD857D1C25AB660061AD61 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DD857C1C25AB660061AD61 /* ExtensionDelegate.swift */; };
+		39DD857F1C25AB660061AD61 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DD857E1C25AB660061AD61 /* NotificationController.swift */; };
+		39DD85811C25AB660061AD61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39DD85801C25AB660061AD61 /* Assets.xcassets */; };
+		39DD85851C25AB660061AD61 /* hackTbilisiWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 39DD85671C25AB660061AD61 /* hackTbilisiWatch.app */; };
+		39DD858F1C25ABEA0061AD61 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DD858E1C25ABEA0061AD61 /* WatchConnectivity.framework */; };
+		39DD85911C25ABF50061AD61 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39DD85901C25ABF50061AD61 /* WatchConnectivity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +64,46 @@
 			remoteGlobalIDString = 392042D41C24893A00E74AA4;
 			remoteInfo = hackTbilisi2016;
 		};
+		39DD85751C25AB660061AD61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 392042CD1C24893A00E74AA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39DD85721C25AB660061AD61;
+			remoteInfo = "hackTbilisiWatch Extension";
+		};
+		39DD85831C25AB660061AD61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 392042CD1C24893A00E74AA4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 39DD85661C25AB660061AD61;
+			remoteInfo = hackTbilisiWatch;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		39DD858B1C25AB660061AD61 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				39DD85741C25AB660061AD61 /* hackTbilisiWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39DD858D1C25AB660061AD61 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				39DD85851C25AB660061AD61 /* hackTbilisiWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		390A45A81C249A9000B67D49 /* CreateOrEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateOrEditViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +143,19 @@
 		395FA1A11C253D2E00D7FCD0 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		395FA1A31C253D4400D7FCD0 /* hackTbilisi2016-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hackTbilisi2016-Bridging-Header.h"; sourceTree = "<group>"; };
 		395FA1A61C25518500D7FCD0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		39DD85671C25AB660061AD61 /* hackTbilisiWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hackTbilisiWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		39DD856A1C25AB660061AD61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		39DD856C1C25AB660061AD61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39DD856E1C25AB660061AD61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39DD85731C25AB660061AD61 /* hackTbilisiWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "hackTbilisiWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39DD85791C25AB660061AD61 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		39DD857A1C25AB660061AD61 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		39DD857C1C25AB660061AD61 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		39DD857E1C25AB660061AD61 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		39DD85801C25AB660061AD61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		39DD85821C25AB660061AD61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39DD858E1C25ABEA0061AD61 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		39DD85901C25ABF50061AD61 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS2.1.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39DD858F1C25ABEA0061AD61 /* WatchConnectivity.framework in Frameworks */,
 				395FA1A71C25518500D7FCD0 /* AVFoundation.framework in Frameworks */,
 				395FA1A21C253D2E00D7FCD0 /* CoreBluetooth.framework in Frameworks */,
 				3920431D1C2489FE00E74AA4 /* libsqlite3.tbd in Frameworks */,
@@ -130,6 +193,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39DD85701C25AB660061AD61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39DD85911C25ABF50061AD61 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +237,8 @@
 		392042CC1C24893A00E74AA4 = {
 			isa = PBXGroup;
 			children = (
+				39DD85901C25ABF50061AD61 /* WatchConnectivity.framework */,
+				39DD858E1C25ABEA0061AD61 /* WatchConnectivity.framework */,
 				395FA1A61C25518500D7FCD0 /* AVFoundation.framework */,
 				395FA1A11C253D2E00D7FCD0 /* CoreBluetooth.framework */,
 				3920431C1C2489FE00E74AA4 /* libsqlite3.tbd */,
@@ -184,6 +257,8 @@
 				392042D71C24893A00E74AA4 /* hackTbilisi2016 */,
 				392042EC1C24893A00E74AA4 /* hackTbilisi2016Tests */,
 				392042F71C24893A00E74AA4 /* hackTbilisi2016UITests */,
+				39DD85681C25AB660061AD61 /* hackTbilisiWatch */,
+				39DD85771C25AB660061AD61 /* hackTbilisiWatch Extension */,
 				392042D61C24893A00E74AA4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -194,6 +269,8 @@
 				392042D51C24893A00E74AA4 /* hackTbilisi2016.app */,
 				392042E91C24893A00E74AA4 /* hackTbilisi2016Tests.xctest */,
 				392042F41C24893A00E74AA4 /* hackTbilisi2016UITests.xctest */,
+				39DD85671C25AB660061AD61 /* hackTbilisiWatch.app */,
+				39DD85731C25AB660061AD61 /* hackTbilisiWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -243,6 +320,37 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		39DD85681C25AB660061AD61 /* hackTbilisiWatch */ = {
+			isa = PBXGroup;
+			children = (
+				39DD85691C25AB660061AD61 /* Interface.storyboard */,
+				39DD856C1C25AB660061AD61 /* Assets.xcassets */,
+				39DD856E1C25AB660061AD61 /* Info.plist */,
+			);
+			path = hackTbilisiWatch;
+			sourceTree = "<group>";
+		};
+		39DD85771C25AB660061AD61 /* hackTbilisiWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				39DD857A1C25AB660061AD61 /* InterfaceController.swift */,
+				39DD857C1C25AB660061AD61 /* ExtensionDelegate.swift */,
+				39DD857E1C25AB660061AD61 /* NotificationController.swift */,
+				39DD85801C25AB660061AD61 /* Assets.xcassets */,
+				39DD85821C25AB660061AD61 /* Info.plist */,
+				39DD85781C25AB660061AD61 /* Supporting Files */,
+			);
+			path = "hackTbilisiWatch Extension";
+			sourceTree = "<group>";
+		};
+		39DD85781C25AB660061AD61 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				39DD85791C25AB660061AD61 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,10 +361,12 @@
 				392042D11C24893A00E74AA4 /* Sources */,
 				392042D21C24893A00E74AA4 /* Frameworks */,
 				392042D31C24893A00E74AA4 /* Resources */,
+				39DD858D1C25AB660061AD61 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				39DD85841C25AB660061AD61 /* PBXTargetDependency */,
 			);
 			name = hackTbilisi2016;
 			productName = hackTbilisi2016;
@@ -299,6 +409,40 @@
 			productReference = 392042F41C24893A00E74AA4 /* hackTbilisi2016UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		39DD85661C25AB660061AD61 /* hackTbilisiWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39DD858C1C25AB660061AD61 /* Build configuration list for PBXNativeTarget "hackTbilisiWatch" */;
+			buildPhases = (
+				39DD85651C25AB660061AD61 /* Resources */,
+				39DD858B1C25AB660061AD61 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				39DD85761C25AB660061AD61 /* PBXTargetDependency */,
+			);
+			name = hackTbilisiWatch;
+			productName = hackTbilisiWatch;
+			productReference = 39DD85671C25AB660061AD61 /* hackTbilisiWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		39DD85721C25AB660061AD61 /* hackTbilisiWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 39DD858A1C25AB660061AD61 /* Build configuration list for PBXNativeTarget "hackTbilisiWatch Extension" */;
+			buildPhases = (
+				39DD856F1C25AB660061AD61 /* Sources */,
+				39DD85701C25AB660061AD61 /* Frameworks */,
+				39DD85711C25AB660061AD61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "hackTbilisiWatch Extension";
+			productName = "hackTbilisiWatch Extension";
+			productReference = 39DD85731C25AB660061AD61 /* hackTbilisiWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -320,6 +464,12 @@
 						CreatedOnToolsVersion = 7.1.1;
 						TestTargetID = 392042D41C24893A00E74AA4;
 					};
+					39DD85661C25AB660061AD61 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					39DD85721C25AB660061AD61 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 				};
 			};
 			buildConfigurationList = 392042D01C24893A00E74AA4 /* Build configuration list for PBXProject "hackTbilisi2016" */;
@@ -338,6 +488,8 @@
 				392042D41C24893A00E74AA4 /* hackTbilisi2016 */,
 				392042E81C24893A00E74AA4 /* hackTbilisi2016Tests */,
 				392042F31C24893A00E74AA4 /* hackTbilisi2016UITests */,
+				39DD85661C25AB660061AD61 /* hackTbilisiWatch */,
+				39DD85721C25AB660061AD61 /* hackTbilisiWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -366,6 +518,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39DD85651C25AB660061AD61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39DD856D1C25AB660061AD61 /* Assets.xcassets in Resources */,
+				39DD856B1C25AB660061AD61 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		39DD85711C25AB660061AD61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39DD85811C25AB660061AD61 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +572,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		39DD856F1C25AB660061AD61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39DD857F1C25AB660061AD61 /* NotificationController.swift in Sources */,
+				39DD857D1C25AB660061AD61 /* ExtensionDelegate.swift in Sources */,
+				39DD857B1C25AB660061AD61 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -415,6 +594,16 @@
 			isa = PBXTargetDependency;
 			target = 392042D41C24893A00E74AA4 /* hackTbilisi2016 */;
 			targetProxy = 392042F51C24893A00E74AA4 /* PBXContainerItemProxy */;
+		};
+		39DD85761C25AB660061AD61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39DD85721C25AB660061AD61 /* hackTbilisiWatch Extension */;
+			targetProxy = 39DD85751C25AB660061AD61 /* PBXContainerItemProxy */;
+		};
+		39DD85841C25AB660061AD61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 39DD85661C25AB660061AD61 /* hackTbilisiWatch */;
+			targetProxy = 39DD85831C25AB660061AD61 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -449,6 +638,14 @@
 				395FA1961C25287000D7FCD0 /* Base */,
 			);
 			name = myo.storyboard;
+			sourceTree = "<group>";
+		};
+		39DD85691C25AB660061AD61 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				39DD856A1C25AB660061AD61 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -626,6 +823,68 @@
 			};
 			name = Release;
 		};
+		39DD85861C25AB660061AD61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = hackTbilisiWatch_Extension;
+				INFOPLIST_FILE = hackTbilisiWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackTbilisi.hackTbilisi2016.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		39DD85871C25AB660061AD61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = hackTbilisiWatch_Extension;
+				INFOPLIST_FILE = hackTbilisiWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackTbilisi.hackTbilisi2016.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
+		39DD85881C25AB660061AD61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "hackTbilisiWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackTbilisi.hackTbilisi2016.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Debug;
+		};
+		39DD85891C25AB660061AD61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "hackTbilisiWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackTbilisi.hackTbilisi2016.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -664,6 +923,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		39DD858A1C25AB660061AD61 /* Build configuration list for PBXNativeTarget "hackTbilisiWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39DD85881C25AB660061AD61 /* Debug */,
+				39DD85891C25AB660061AD61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		39DD858C1C25AB660061AD61 /* Build configuration list for PBXNativeTarget "hackTbilisiWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39DD85861C25AB660061AD61 /* Debug */,
+				39DD85871C25AB660061AD61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
