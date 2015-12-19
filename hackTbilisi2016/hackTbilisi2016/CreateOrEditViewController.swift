@@ -7,6 +7,7 @@ class CreateOrEditViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var imageWrapper: UIView!
     @IBOutlet weak var removeButton: UIButton!
     weak var delegate: CreateOrEditDelegate?
+    var model: FeedModel?
     let images = [String]()
     
     override func viewDidLoad() {
@@ -16,6 +17,23 @@ class CreateOrEditViewController: UIViewController, UITextViewDelegate {
         removeButton.layer.cornerRadius = removeButton.frame.width * 0.1
     }
 
+    override func viewDidAppear(animated: Bool) {
+        if let model = model {
+            inputTextView.text = model.text
+            for image in model.images {
+                let index = Int("\(image[image.characters.count - 1])")!
+                let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                imageView.contentMode = UIViewContentMode.ScaleAspectFill
+                imageView.image = UIImage(named: "move\(index)")
+                imageView.tag = index
+                imageWrapper.addSubview(imageView)
+                imageView.center = imageWrapper.center
+                imageView.frame.origin.x = CGFloat((imageWrapper.subviews.count - 1) * 51)
+            }
+            removeButton.hidden = false
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -58,18 +76,19 @@ class CreateOrEditViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    
     @IBAction func addActionImage(sender: UIBarButtonItem) {
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         let index = sender.tag
-        let imageView = UIImageView(frame: CGRect(x: imageWrapper.frame.width, y: 0, width: 50, height: 50))
-        imageView.frame.origin.y = imageWrapper.frame.height / 2 - 20
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
         imageView.alpha = 0
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
         imageView.image = UIImage(named: "move\(index)")
         imageView.tag = index
         let children = imageWrapper.subviews.count
         imageWrapper.addSubview(imageView)
+        imageView.center = imageWrapper.center
+        imageView.frame.origin.x = imageWrapper.frame.width
+        
         UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
                 imageView.frame.origin.x = CGFloat(children * 51)
                 imageView.alpha = 1
@@ -87,7 +106,7 @@ class CreateOrEditViewController: UIViewController, UITextViewDelegate {
             alertError("Please choose one of the actions down below")
         }
         else {
-            let model = FeedModel(id: nil, text: inputTextView.text, images: imageWrapper.subviews.map { "move\($0.tag)" })
+            let model = FeedModel(id: self.model?.id, text: inputTextView.text, images: imageWrapper.subviews.map { "move\($0.tag)" })
             delegate!.CreateOrEditDidFinish(self, model: model)
         }
     }
@@ -97,14 +116,4 @@ class CreateOrEditViewController: UIViewController, UITextViewDelegate {
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
         presentViewController(alert, animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

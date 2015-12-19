@@ -20,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tR6-XD-c0h">
                                 <rect key="frame" x="0.0" y="64" width="320" height="372"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="owZ-3s-rg4">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="owZ-3s-rg4">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="186"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CEz-L9-Bz9">
@@ -43,7 +43,7 @@
                                             </mask>
                                         </variation>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dc3-y5-sMH">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dc3-y5-sMH">
                                         <rect key="frame" x="0.0" y="186" width="320" height="186"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6um-rP-VGe">
@@ -60,8 +60,10 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="dc3-y5-sMH" secondAttribute="bottom" id="284-Mj-fJd"/>
                                     <constraint firstItem="owZ-3s-rg4" firstAttribute="leading" secondItem="tR6-XD-c0h" secondAttribute="leading" id="Ae3-cL-QfY"/>
                                     <constraint firstAttribute="trailing" secondItem="dc3-y5-sMH" secondAttribute="trailing" id="BfY-QZ-kB7"/>
+                                    <constraint firstItem="owZ-3s-rg4" firstAttribute="top" secondItem="tR6-XD-c0h" secondAttribute="top" id="HKX-NN-hHP"/>
                                     <constraint firstItem="dc3-y5-sMH" firstAttribute="leading" secondItem="tR6-XD-c0h" secondAttribute="leading" id="JaM-gb-iOK"/>
                                     <constraint firstAttribute="trailing" secondItem="owZ-3s-rg4" secondAttribute="trailing" id="fS3-r3-9fk"/>
                                 </constraints>

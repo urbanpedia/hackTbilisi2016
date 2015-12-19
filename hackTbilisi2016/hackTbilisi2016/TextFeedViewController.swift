@@ -22,13 +22,19 @@ class TextFeedViewController: UIViewController, UITableViewDelegate, UITableView
     private func loadData() {
         let query = PFQuery(className: "Feed")
         query.fromLocalDatastore()
+        query.whereKey("isActive", equalTo: true)
         query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
                 if let objects = objects {
                     for object in objects {
-//                        print(object.objectForKey("text")!)
-//                        print(object.objectForKey("actions")!)
-                        let modelItem = FeedModel(id: object.objectId,text: object.objectForKey("text") as! String, images: object.objectForKey("actions") as! [String])
+                        print(object.objectForKey("id")!)
+                        print(object.objectForKey("text")!)
+                        print(object.objectForKey("actions")!)
+                        print(object.objectForKey("isActive")!)
+                        let modelItem = FeedModel(
+                            id: object.objectForKey("id") as? String,
+                            text: object.objectForKey("text") as! String,
+                            images: object.objectForKey("actions") as! [String])
                         self.model.insert(modelItem, atIndex: 0)
                     }
                     self.tableView.reloadData()
@@ -69,40 +75,74 @@ class TextFeedViewController: UIViewController, UITableViewDelegate, UITableView
             let id = model[indexPath.row].id!
             model.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-            let query = PFQuery(className: "Feed")
-            query.fromLocalDatastore()
-            query.getObjectInBackgroundWithId(id
-                , block: { (object: PFObject?, error: NSError?) -> Void in
-                    if let object = object, _ = error {
-                        object.deleteInBackground()
-                    }
-            })
+            deleteRecord(id)
         }
+    }
+    
+    private func deleteRecord(id: String) {
+        let query = PFQuery(className: "Feed")
+        query.fromLocalDatastore()
+        query.whereKey("id", equalTo: id)
+        query.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
+            if let objects = objects {
+                for object in objects {
+                    object.setValue(false, forKey: "isActive")
+                    object.pinInBackground()
+                }
+            }
+        })
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("edit", sender: self)
     }
     
     @IBAction func GoToCreate(sender: UIBarButtonItem) {
         performSegueWithIdentifier("create", sender: self)
     }
-    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "create" {
             let controller = segue.destinationViewController as! CreateOrEditViewController
             controller.delegate = self
         }
+        else if segue.identifier == "edit" {
+            let controller = segue.destinationViewController as! CreateOrEditViewController
+            controller.delegate = self
+            controller.model = model[tableView.indexPathForSelectedRow!.row]
+        }
     }
     
     func CreateOrEditDidFinish(controller: CreateOrEditViewController, model: FeedModel) {
-        let feed = PFObject(className: "Feed")
-        feed["text"] = model.text
-        feed["actions"] = model.images
-        feed.pinInBackgroundWithBlock { (bool: Bool, error: NSError?) -> Void in
-            if error == nil {
-                model.id = feed.objectId
-                self.model.insert(model, atIndex: 0)
-                self.tableView.reloadData()
-                self.navigationController!.popViewControllerAnimated(true)
-            }
+        if let id = model.id {
+            let query = PFQuery(className: "Feed")
+            query.fromLocalDatastore()
+            query.whereKey("id", equalTo: id)
+            query.findObjectsInBackgroundWithBlock({ (objects: [PFObject]?, error: NSError?) -> Void in
+                if let objects = objects {
+                    for object in objects {
+                        object.setValue(model.text, forKey: "text")
+                        object.setValue(model.images, forKey: "actions")
+                        object.pinInBackground()
+                    }
+                }
+            })
+            let index = self.model.indexOf{ $0.id == id }!
+            self.model[index] = model
         }
+        else {
+            let id = RandomStringHelper.getRandomString()
+            let feed = PFObject(className: "Feed")
+            feed["id"] = id
+            feed["text"] = model.text
+            feed["actions"] = model.images
+            feed["isActive"] = true
+            feed.pinInBackground()
+            model.id = id
+            self.model.insert(model, atIndex: 0)
+        }
+
+        self.tableView.reloadData()
+        self.navigationController!.popViewControllerAnimated(true)
     }
 }
