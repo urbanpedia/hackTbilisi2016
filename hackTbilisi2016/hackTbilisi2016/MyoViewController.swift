@@ -8,68 +8,13 @@ class MyoViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
+    var actions = [Int]()
+    var isLocked = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
-        backgroundImage.addSubview(blurEffectView)
-        
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: "didConnectDevice:",
-            name: TLMHubDidConnectDeviceNotification,
-            object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: "didDisconnectDevice:",
-            name: TLMHubDidDisconnectDeviceNotification,
-            object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: "didSyncArm:",
-            name: TLMMyoDidReceiveArmSyncEventNotification,
-            object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: "didUnsyncArm:",
-            name: TLMMyoDidReceiveArmUnsyncEventNotification,
-            object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: "didUnlockDevice:",
-            name: TLMMyoDidReceiveUnlockEventNotification,
-            object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: "didLockDevice:",
-            name: TLMMyoDidReceiveLockEventNotification,
-            object: nil)
-        
-        //        NSNotificationCenter.defaultCenter().addObserver(
-        //            self,
-        //            selector: "didReceiveOrientationEvent:",
-        //            name: TLMMyoDidReceiveOrientationEventNotification,
-        //            object: nil)
-        //
-        //        NSNotificationCenter.defaultCenter().addObserver(
-        //            self,
-        //            selector: "didReceiveAccelerometerEvent:",
-        //            name: TLMMyoDidReceiveAccelerometerEventNotification,
-        //            object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(
-            self,
-            selector: "didReceivePoseChange:",
-            name: TLMMyoDidReceivePoseChangedNotification,
-            object: nil)
+        makeBlur()
+        installNSNotifications()
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,7 +22,7 @@ class MyoViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-//        textToSpeach("this is awesome")
+//        textToSpeach("rogor khar megobaro")
     }
     
     @IBAction func goToSettings(sender: UIBarButtonItem) {
@@ -109,8 +54,7 @@ class MyoViewController: UIViewController {
     func didReceiveAccelerometerEvent(notification: NSNotification) {
     }
     
-    var actions = [Int]()
-    var isLocked = false
+    
     func didReceivePoseChange(notification: NSNotification) {
         let pose = notification.userInfo![kTLMKeyPose]!
         var sensor = ""
@@ -160,21 +104,13 @@ class MyoViewController: UIViewController {
     }
     
     private func clearSubViews(view: UIView) {
-        for subView in view.subviews {
-            subView.removeFromSuperview()
-        }
+        view.removeAllSubviews()
     }
     
     private func textToSpeach(text: String) {
         print(text)
         let voices = AVSpeechSynthesisVoice.speechVoices()
-        for voice in voices {
-            if "en-US" == voice.language {
-                myUtterance.voice = voice
-                print(voice.language)
-                break;
-            }
-        }
+        myUtterance.voice = voices.filter { $0.language == "en-US" }.first!
         myUtterance = AVSpeechUtterance(string: text)
         myUtterance.rate = 0.5
         synth.speakUtterance(myUtterance)
@@ -217,5 +153,57 @@ class MyoViewController: UIViewController {
             }) { (bool: Bool) -> Void in
                 UIApplication.sharedApplication().endIgnoringInteractionEvents()
         }
+    }
+    
+    private func makeBlur() {
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        backgroundImage.addSubview(blurEffectView)
+    }
+    
+    private func installNSNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "didConnectDevice:",
+            name: TLMHubDidConnectDeviceNotification,
+            object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "didDisconnectDevice:",
+            name: TLMHubDidDisconnectDeviceNotification,
+            object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "didSyncArm:",
+            name: TLMMyoDidReceiveArmSyncEventNotification,
+            object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "didUnsyncArm:",
+            name: TLMMyoDidReceiveArmUnsyncEventNotification,
+            object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "didUnlockDevice:",
+            name: TLMMyoDidReceiveUnlockEventNotification,
+            object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "didLockDevice:",
+            name: TLMMyoDidReceiveLockEventNotification,
+            object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "didReceivePoseChange:",
+            name: TLMMyoDidReceivePoseChangedNotification,
+            object: nil)
     }
 }

@@ -55,10 +55,7 @@ class TextFeedViewController: UIViewController, UITableViewDelegate, UITableView
         let row = tableView.dequeueReusableCellWithIdentifier("myoRow", forIndexPath: indexPath) as!
         TextFeedTableViewCell
         row.feedLabel.text = model[indexPath.row].text
-        for subview in row.imageWrapper.subviews {
-            subview.removeFromSuperview()
-        }
-        
+        row.imageWrapper.removeAllSubviews()
         // draw images
         for (index, image) in model[indexPath.row].images.enumerate() {
             let imageView = UIImageView(frame: CGRect(x: index * 31, y: 0, width: 30, height: 30))
@@ -104,7 +101,6 @@ class TextFeedViewController: UIViewController, UITableViewDelegate, UITableView
                 commitEditingStyle: .Delete,
                 forRowAtIndexPath: indexPath
             )
-            
             return
         })
         
@@ -117,23 +113,20 @@ class TextFeedViewController: UIViewController, UITableViewDelegate, UITableView
         performSegueWithIdentifier("create", sender: self)
     }
     
-    
     @IBAction func goToMyo(sender: UIBarButtonItem) {
         performSegueWithIdentifier("myo", sender: self)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "create" {
+        if segue.identifier == "myo" {
+            _ = segue.destinationViewController as! MyoViewController
+        }
+        else {
             let controller = segue.destinationViewController as! CreateOrEditViewController
             controller.delegate = self
-        }
-        else if segue.identifier == "edit" {
-            let controller = segue.destinationViewController as! CreateOrEditViewController
-            controller.delegate = self
-            controller.model = model[tableView.indexPathForSelectedRow!.row]
-        }
-        else if segue.identifier == "myo" {
-            let controller = segue.destinationViewController as! MyoViewController
+            if segue.identifier == "edit" {
+                controller.model = model[tableView.indexPathForSelectedRow!.row]
+            }
         }
     }
     

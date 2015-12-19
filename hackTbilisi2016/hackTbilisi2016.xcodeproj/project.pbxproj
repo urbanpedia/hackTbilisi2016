@@ -31,9 +31,9 @@
 		3920431F1C248C5300E74AA4 /* TextFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3920431E1C248C5300E74AA4 /* TextFeedViewController.swift */; };
 		392043221C248D8E00E74AA4 /* TextFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392043211C248D8E00E74AA4 /* TextFeedModel.swift */; };
 		392043241C248DA800E74AA4 /* TextFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392043231C248DA800E74AA4 /* TextFeedTableViewCell.swift */; };
+		394855FB1C25975300D789DB /* RemoveAllSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394855FA1C25975300D789DB /* RemoveAllSubview.swift */; };
 		395FA1971C25287000D7FCD0 /* myo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 395FA1951C25287000D7FCD0 /* myo.storyboard */; };
 		395FA19B1C2528C900D7FCD0 /* MyoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395FA19A1C2528C900D7FCD0 /* MyoViewController.swift */; };
-		395FA19E1C2535A100D7FCD0 /* double-tap.gif in Resources */ = {isa = PBXBuildFile; fileRef = 395FA19D1C2535A100D7FCD0 /* double-tap.gif */; };
 		395FA1A01C253D1700D7FCD0 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395FA19F1C253D1700D7FCD0 /* MyoKit.framework */; };
 		395FA1A21C253D2E00D7FCD0 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395FA1A11C253D2E00D7FCD0 /* CoreBluetooth.framework */; };
 		395FA1A71C25518500D7FCD0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395FA1A61C25518500D7FCD0 /* AVFoundation.framework */; };
@@ -87,9 +87,9 @@
 		3920431E1C248C5300E74AA4 /* TextFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFeedViewController.swift; sourceTree = "<group>"; };
 		392043211C248D8E00E74AA4 /* TextFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFeedModel.swift; sourceTree = "<group>"; };
 		392043231C248DA800E74AA4 /* TextFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFeedTableViewCell.swift; sourceTree = "<group>"; };
+		394855FA1C25975300D789DB /* RemoveAllSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveAllSubview.swift; sourceTree = "<group>"; };
 		395FA1961C25287000D7FCD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/myo.storyboard; sourceTree = "<group>"; };
 		395FA19A1C2528C900D7FCD0 /* MyoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyoViewController.swift; sourceTree = "<group>"; };
-		395FA19D1C2535A100D7FCD0 /* double-tap.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "double-tap.gif"; sourceTree = "<group>"; };
 		395FA19F1C253D1700D7FCD0 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
 		395FA1A11C253D2E00D7FCD0 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		395FA1A31C253D4400D7FCD0 /* hackTbilisi2016-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hackTbilisi2016-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -140,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				390A45AE1C24CD1000B67D49 /* RandomStringGenerator.swift */,
+				394855FA1C25975300D789DB /* RemoveAllSubview.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -201,7 +202,6 @@
 			isa = PBXGroup;
 			children = (
 				392042D81C24893A00E74AA4 /* AppDelegate.swift */,
-				395FA19C1C2534DF00D7FCD0 /* Gifs */,
 				390A45B01C24D52300B67D49 /* Controller */,
 				390A45B11C24E69600B67D49 /* Cell */,
 				392043201C248D7C00E74AA4 /* Model */,
@@ -241,14 +241,6 @@
 				392043211C248D8E00E74AA4 /* TextFeedModel.swift */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		395FA19C1C2534DF00D7FCD0 /* Gifs */ = {
-			isa = PBXGroup;
-			children = (
-				395FA19D1C2535A100D7FCD0 /* double-tap.gif */,
-			);
-			name = Gifs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,7 +350,6 @@
 				392042E31C24893A00E74AA4 /* LaunchScreen.storyboard in Resources */,
 				390A45AC1C249B5B00B67D49 /* CreateOrEdit.storyboard in Resources */,
 				392042E01C24893A00E74AA4 /* Assets.xcassets in Resources */,
-				395FA19E1C2535A100D7FCD0 /* double-tap.gif in Resources */,
 				395FA1971C25287000D7FCD0 /* myo.storyboard in Resources */,
 				392042DE1C24893A00E74AA4 /* Main.storyboard in Resources */,
 			);
@@ -390,6 +381,7 @@
 				392043241C248DA800E74AA4 /* TextFeedTableViewCell.swift in Sources */,
 				392042D91C24893A00E74AA4 /* AppDelegate.swift in Sources */,
 				3920431F1C248C5300E74AA4 /* TextFeedViewController.swift in Sources */,
+				394855FB1C25975300D789DB /* RemoveAllSubview.swift in Sources */,
 				390A45AF1C24CD1000B67D49 /* RandomStringGenerator.swift in Sources */,
 				395FA19B1C2528C900D7FCD0 /* MyoViewController.swift in Sources */,
 			);
