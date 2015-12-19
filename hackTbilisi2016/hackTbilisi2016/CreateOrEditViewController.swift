@@ -108,7 +108,29 @@ class CreateOrEditViewController: UIViewController, UITextViewDelegate {
         }
         else {
             let model = FeedModel(id: self.model?.id, text: inputTextView.text, images: imageWrapper.subviews.map { "move\($0.tag)" })
-            delegate!.CreateOrEditDidFinish(self, model: model)
+            
+            // prevent same records
+            let query = PFQuery(className: "Feed")
+            query.fromLocalDatastore()
+            query.whereKey("isActive", equalTo: true)
+            if let id = model.id {
+               query.whereKey("id", notEqualTo: id)
+            }
+            query.findObjectsInBackgroundWithBlock { (objects: [PFObject]?, error: NSError?) -> Void in
+                if error == nil {
+                    if let objects = objects {
+                        let isValid = objects.filter {
+                            ($0.objectForKey("actions") as! [String]).joinWithSeparator(",") == model.images.joinWithSeparator(",")
+                            }.count == 0
+                        if isValid {
+                            self.delegate!.CreateOrEditDidFinish(self, model: model)
+                        }
+                        else {
+                            self.alertError("Combinations exists")
+                        }
+                    }
+                }
+            }
         }
     }
     

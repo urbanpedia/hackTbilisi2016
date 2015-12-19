@@ -85,7 +85,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Myo Feed" id="dz6-SU-K9p">
-                        <barButtonItem key="leftBarButtonItem" image="myo" id="jsl-t1-led">
+                        <barButtonItem key="leftBarButtonItem" image="tank" id="jsl-t1-led">
                             <connections>
                                 <action selector="goToMyo:" destination="BYZ-38-t0r" id="pp8-aj-JER"/>
                             </connections>
@@ -163,6 +163,6 @@
         <image name="move2" width="240" height="200"/>
         <image name="move3" width="240" height="200"/>
         <image name="move4" width="160" height="160"/>
-        <image name="myo" width="22" height="22"/>
+        <image name="tank" width="22" height="22"/>
     </resources>
 </document>

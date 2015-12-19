@@ -74,11 +74,10 @@ class MyoViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func viewDidAppear(animated: Bool) {
-        textToSpeach("this is awesome")
+//        textToSpeach("this is awesome")
     }
     
     @IBAction func goToSettings(sender: UIBarButtonItem) {
@@ -87,67 +86,27 @@ class MyoViewController: UIViewController {
     }
     
     func didConnectDevice(notification: NSNotification) {
-        //print(notification.userInfo![kTLMKeyMyo])
-        
-        // Set the text of the armLabel to "Perform the Sync Gesture".
-//        self.textLable.text = "Perform the Sync Gesture";
-//        
-//        // Set the text of our helloLabel to be "Hello Myo".
-//        self.mainText.text = "Hello Myo";
     }
     
     func didDisconnectDevice(notification: NSNotification) {
-        //print(notification.userInfo![kTLMKeyMyo])
-        // Set the text of the armLabel to "Perform the Sync Gesture".
-//        self.textLable.text = "Perform the Sync Gesture";
-//        
-//        // Set the text of our helloLabel to be "Hello Myo".
-//        self.mainText.text = "Hello Myo";
     }
     
     func didSyncArm(notification: NSNotification) {
-//        self.textLable.text = "Perform the Sync Gesture";
-//        self.mainText.text = "Hello Myo";
-//        let armEvent = notification.userInfo![kTLMKeyArmSyncEvent]
-//        //let armString = armEvent!.arm == TLMArm.Right ? "Right" : "Left";
-//        let directionString = armEvent!.xDirection == TLMArmXDirection.TowardWrist ? "Toward Wrist" : "Toward Elbow";
-//        self.mainText.text = directionString
     }
     
     func didUnsyncArm(notification: NSNotification) {
-        //print(notification.userInfo![kTLMKeyMyo])
-        // Set the text of the armLabel to "Perform the Sync Gesture".
-//        self.textLable.text = "Perform the Sync Gesture";
-//        
-//        // Set the text of our helloLabel to be "Hello Myo".
-//        self.mainText.text = "Hello Myo";
     }
     
     func didUnlockDevice(notification: NSNotification) {
-        print("unlocke")
     }
     
     func didlockDevice(notification: NSNotification) {
-        print("locke")
     }
     
     func didReceiveOrientationEvent(notification: NSNotification) {
-        //print(notification.userInfo![kTLMKeyOrientationEvent])
     }
     
     func didReceiveAccelerometerEvent(notification: NSNotification) {
-        //print(notification.userInfo![kTLMKeyAccelerometerEvent])
-        
-//        let accelerometerEvent = notification.userInfo![kTLMKeyAccelerometerEvent]!
-//        
-//        // Get the acceleration vector from the accelerometer event.
-//        let accelerationVector = accelerometerEvent.vector;
-//        
-//        // Calculate the magnitude of the acceleration vector.
-//        let magnitude = TLMVector3Length(accelerationVector);
-//        
-//        // Update the progress bar based on the magnitude of the acceleration vector.
-//        self.progressbar.progress = magnitude / 8;
     }
     
     var actions = [Int]()
