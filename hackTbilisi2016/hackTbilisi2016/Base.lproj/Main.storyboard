@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Myo Feed-->
+        <!--Text Feed View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TextFeedViewController" customModule="hackTbilisi2016" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,6 +19,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FiD-sM-0dK">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.90980392156862744" green="0.91764705882352937" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myoRow" id="if0-U0-suV" customClass="TextFeedTableViewCell" customModule="hackTbilisi2016" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="75"/>
@@ -30,7 +31,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you my dear friend, you are nice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oxa-cY-UnR">
                                                     <rect key="frame" x="8" y="8" width="304" height="26"/>
                                                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.31764705882352939" green="0.32156862745098036" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kn5-eO-0nE">
@@ -84,7 +85,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="FiD-sM-0dK" secondAttribute="bottom" id="yoi-4o-svQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Myo Feed" id="dz6-SU-K9p">
+                    <navigationItem key="navigationItem" id="dz6-SU-K9p">
                         <barButtonItem key="leftBarButtonItem" image="tank" id="jsl-t1-led">
                             <connections>
                                 <action selector="goToMyo:" destination="BYZ-38-t0r" id="pp8-aj-JER"/>
@@ -108,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="259" y="1020"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom View Controller-->
         <scene sceneID="zDR-kI-gol">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VHG-l2-59z" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VHG-l2-59z" customClass="CustomViewController" customModule="hackTbilisi2016" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lzP-XY-sXS">

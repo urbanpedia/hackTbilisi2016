@@ -31,7 +31,9 @@
 		3920431F1C248C5300E74AA4 /* TextFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3920431E1C248C5300E74AA4 /* TextFeedViewController.swift */; };
 		392043221C248D8E00E74AA4 /* TextFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392043211C248D8E00E74AA4 /* TextFeedModel.swift */; };
 		392043241C248DA800E74AA4 /* TextFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392043231C248DA800E74AA4 /* TextFeedTableViewCell.swift */; };
+		393CDE751C25F3B2008D07D2 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 393CDE741C25F3B2008D07D2 /* Podfile */; };
 		394855FB1C25975300D789DB /* RemoveAllSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394855FA1C25975300D789DB /* RemoveAllSubview.swift */; };
+		3953DF7A1C25D8CC0082645F /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3953DF791C25D8CC0082645F /* CustomViewController.swift */; };
 		395FA1971C25287000D7FCD0 /* myo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 395FA1951C25287000D7FCD0 /* myo.storyboard */; };
 		395FA19B1C2528C900D7FCD0 /* MyoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395FA19A1C2528C900D7FCD0 /* MyoViewController.swift */; };
 		395FA1A01C253D1700D7FCD0 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395FA19F1C253D1700D7FCD0 /* MyoKit.framework */; };
@@ -136,7 +138,9 @@
 		3920431E1C248C5300E74AA4 /* TextFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFeedViewController.swift; sourceTree = "<group>"; };
 		392043211C248D8E00E74AA4 /* TextFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFeedModel.swift; sourceTree = "<group>"; };
 		392043231C248DA800E74AA4 /* TextFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFeedTableViewCell.swift; sourceTree = "<group>"; };
+		393CDE741C25F3B2008D07D2 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		394855FA1C25975300D789DB /* RemoveAllSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveAllSubview.swift; sourceTree = "<group>"; };
+		3953DF791C25D8CC0082645F /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		395FA1961C25287000D7FCD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/myo.storyboard; sourceTree = "<group>"; };
 		395FA19A1C2528C900D7FCD0 /* MyoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyoViewController.swift; sourceTree = "<group>"; };
 		395FA19F1C253D1700D7FCD0 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				3920431E1C248C5300E74AA4 /* TextFeedViewController.swift */,
 				390A45A81C249A9000B67D49 /* CreateOrEditViewController.swift */,
 				395FA19A1C2528C900D7FCD0 /* MyoViewController.swift */,
+				3953DF791C25D8CC0082645F /* CustomViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 		392042CC1C24893A00E74AA4 = {
 			isa = PBXGroup;
 			children = (
+				393CDE741C25F3B2008D07D2 /* Podfile */,
 				39DD85901C25ABF50061AD61 /* WatchConnectivity.framework */,
 				39DD858E1C25ABEA0061AD61 /* WatchConnectivity.framework */,
 				395FA1A61C25518500D7FCD0 /* AVFoundation.framework */,
@@ -499,6 +505,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				393CDE751C25F3B2008D07D2 /* Podfile in Resources */,
 				392042E31C24893A00E74AA4 /* LaunchScreen.storyboard in Resources */,
 				390A45AC1C249B5B00B67D49 /* CreateOrEdit.storyboard in Resources */,
 				392042E01C24893A00E74AA4 /* Assets.xcassets in Resources */,
@@ -545,6 +552,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3953DF7A1C25D8CC0082645F /* CustomViewController.swift in Sources */,
 				390A45A91C249A9000B67D49 /* CreateOrEditViewController.swift in Sources */,
 				392043221C248D8E00E74AA4 /* TextFeedModel.swift in Sources */,
 				392043241C248DA800E74AA4 /* TextFeedTableViewCell.swift in Sources */,
@@ -931,6 +939,7 @@
 				39DD85891C25AB660061AD61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		39DD858C1C25AB660061AD61 /* Build configuration list for PBXNativeTarget "hackTbilisiWatch" */ = {
 			isa = XCConfigurationList;
@@ -939,6 +948,7 @@
 				39DD85871C25AB660061AD61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

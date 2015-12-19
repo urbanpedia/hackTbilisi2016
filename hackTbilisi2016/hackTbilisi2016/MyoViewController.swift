@@ -15,6 +15,14 @@ class MyoViewController: UIViewController {
         super.viewDidLoad()
         makeBlur()
         installNSNotifications()
+        
+        UIView.animateWithDuration(4.0,
+            delay: 0,
+            options: [UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: { () -> Void in
+                self.backgroundImage.transform = CGAffineTransformMakeScale(0.5, 0.5)
+            }) { (bool: Bool) -> Void in
+                
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -156,11 +164,11 @@ class MyoViewController: UIViewController {
     }
     
     private func makeBlur() {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        backgroundImage.addSubview(blurEffectView)
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = view.bounds
+//        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+//        backgroundImage.addSubview(blurEffectView)
     }
     
     private func installNSNotifications() {

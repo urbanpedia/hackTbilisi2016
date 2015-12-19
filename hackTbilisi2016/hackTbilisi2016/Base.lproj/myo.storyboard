@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Say Something-->
+        <!--Myo View Controller-->
         <scene sceneID="3ZV-K3-4lb">
             <objects>
                 <viewController id="TZs-Zi-1Nv" customClass="MyoViewController" customModule="hackTbilisi2016" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,20 +26,47 @@
                                     <constraint firstAttribute="height" constant="128" id="GXq-vi-6s2"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double tap to push myo actions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isD-2C-gyL">
+                                <rect key="frame" x="0.0" y="72" width="320" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.31764705879999999" green="0.32156862749999998" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="db_tap" translatesAutoresizingMaskIntoConstraints="NO" id="Okr-19-nm8">
+                                <rect key="frame" x="108" y="98" width="105" height="57"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="j8l-d9-fZb"/>
+                                    <constraint firstAttribute="width" constant="105" id="v8H-5F-SoM"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rhJ-y2-9Wt" firstAttribute="centerX" secondItem="5Xf-r5-HJd" secondAttribute="centerX" id="1YV-Hv-oYC"/>
                             <constraint firstItem="1mB-pJ-Xuz" firstAttribute="centerX" secondItem="5Xf-r5-HJd" secondAttribute="centerX" id="6Hc-1y-Xt8"/>
+                            <constraint firstItem="isD-2C-gyL" firstAttribute="top" secondItem="3MK-c2-M5n" secondAttribute="bottom" constant="8" id="Fsz-Ug-tG6"/>
                             <constraint firstItem="rhJ-y2-9Wt" firstAttribute="top" secondItem="3MK-c2-M5n" secondAttribute="bottom" id="UrZ-hP-zrq"/>
                             <constraint firstItem="1mB-pJ-Xuz" firstAttribute="leading" secondItem="5Xf-r5-HJd" secondAttribute="leading" id="YbR-eK-M9d"/>
+                            <constraint firstItem="isD-2C-gyL" firstAttribute="leading" secondItem="5Xf-r5-HJd" secondAttribute="leading" id="cdy-b8-8I6"/>
                             <constraint firstItem="1mB-pJ-Xuz" firstAttribute="centerY" secondItem="5Xf-r5-HJd" secondAttribute="centerY" id="dHu-0n-AEq"/>
                             <constraint firstAttribute="trailing" secondItem="1mB-pJ-Xuz" secondAttribute="trailing" id="hZT-FL-AAX"/>
+                            <constraint firstItem="Okr-19-nm8" firstAttribute="centerX" secondItem="5Xf-r5-HJd" secondAttribute="centerX" id="j3E-Hq-Z7w"/>
                             <constraint firstItem="lrD-ft-ePS" firstAttribute="top" secondItem="rhJ-y2-9Wt" secondAttribute="bottom" id="lma-IP-5dP"/>
+                            <constraint firstItem="Okr-19-nm8" firstAttribute="top" secondItem="isD-2C-gyL" secondAttribute="bottom" constant="2" id="mb3-Yc-agd"/>
                             <constraint firstItem="rhJ-y2-9Wt" firstAttribute="width" secondItem="5Xf-r5-HJd" secondAttribute="width" id="rhy-TT-ymX"/>
+                            <constraint firstAttribute="trailing" secondItem="isD-2C-gyL" secondAttribute="trailing" id="wec-2D-mE8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Say Something" id="31s-nS-Geu">
+                    <navigationItem key="navigationItem" id="31s-nS-Geu">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="xSY-E3-15x">
+                            <rect key="frame" x="96" y="7" width="128" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="iPhone"/>
+                                <segment title="iWatch"/>
+                            </segments>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" image="myo" id="IOb-Mq-UZ9">
                             <connections>
                                 <action selector="goToSettings:" destination="TZs-Zi-1Nv" id="EmU-Mo-702"/>
@@ -59,6 +86,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="db_tap" width="240" height="200"/>
         <image name="myo" width="22" height="22"/>
         <image name="myobackground" width="498" height="498"/>
     </resources>

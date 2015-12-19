@@ -16,6 +16,14 @@ class TextFeedViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         loadData()
         initialWCSession()
+//        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "db_tap")!.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 0), resizingMode: .Stretch), forBarMetrics: .Default)
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 38, height: 38))
+        imageView.contentMode = .ScaleAspectFit
+        let image = UIImage(named: "mov4_white")
+        imageView.image = image
+        navigationItem.titleView = imageView
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,7 +137,7 @@ class TextFeedViewController: UIViewController, UITableViewDelegate, UITableView
             return
         })
         
-        deleteButton.backgroundColor = UIColor(red: 255/255, green: 99/255, blue: 71/255, alpha: 1)
+        deleteButton.backgroundColor = self.navigationController!.navigationBar.barTintColor!
         
         return [deleteButton]
     }
