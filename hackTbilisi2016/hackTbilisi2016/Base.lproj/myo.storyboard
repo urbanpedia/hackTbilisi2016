@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rhJ-y2-9Wt">
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myo-arm" translatesAutoresizingMaskIntoConstraints="NO" id="rhJ-y2-9Wt">
                                 <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mB-pJ-Xuz">
@@ -43,9 +43,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rhJ-y2-9Wt" firstAttribute="centerX" secondItem="5Xf-r5-HJd" secondAttribute="centerX" id="1YV-Hv-oYC"/>
+                            <constraint firstAttribute="trailing" secondItem="rhJ-y2-9Wt" secondAttribute="trailing" id="40i-Oy-Cyx"/>
                             <constraint firstItem="1mB-pJ-Xuz" firstAttribute="centerX" secondItem="5Xf-r5-HJd" secondAttribute="centerX" id="6Hc-1y-Xt8"/>
                             <constraint firstItem="isD-2C-gyL" firstAttribute="top" secondItem="3MK-c2-M5n" secondAttribute="bottom" constant="8" id="Fsz-Ug-tG6"/>
                             <constraint firstItem="rhJ-y2-9Wt" firstAttribute="top" secondItem="3MK-c2-M5n" secondAttribute="bottom" id="UrZ-hP-zrq"/>
+                            <constraint firstItem="rhJ-y2-9Wt" firstAttribute="top" secondItem="3MK-c2-M5n" secondAttribute="bottom" id="VE5-yU-K3G"/>
                             <constraint firstItem="1mB-pJ-Xuz" firstAttribute="leading" secondItem="5Xf-r5-HJd" secondAttribute="leading" id="YbR-eK-M9d"/>
                             <constraint firstItem="isD-2C-gyL" firstAttribute="leading" secondItem="5Xf-r5-HJd" secondAttribute="leading" id="cdy-b8-8I6"/>
                             <constraint firstItem="1mB-pJ-Xuz" firstAttribute="centerY" secondItem="5Xf-r5-HJd" secondAttribute="centerY" id="dHu-0n-AEq"/>
@@ -53,9 +55,19 @@
                             <constraint firstItem="Okr-19-nm8" firstAttribute="centerX" secondItem="5Xf-r5-HJd" secondAttribute="centerX" id="j3E-Hq-Z7w"/>
                             <constraint firstItem="lrD-ft-ePS" firstAttribute="top" secondItem="rhJ-y2-9Wt" secondAttribute="bottom" id="lma-IP-5dP"/>
                             <constraint firstItem="Okr-19-nm8" firstAttribute="top" secondItem="isD-2C-gyL" secondAttribute="bottom" constant="2" id="mb3-Yc-agd"/>
+                            <constraint firstItem="lrD-ft-ePS" firstAttribute="top" secondItem="rhJ-y2-9Wt" secondAttribute="bottom" id="nQc-5w-qkM"/>
                             <constraint firstItem="rhJ-y2-9Wt" firstAttribute="width" secondItem="5Xf-r5-HJd" secondAttribute="width" id="rhy-TT-ymX"/>
                             <constraint firstAttribute="trailing" secondItem="isD-2C-gyL" secondAttribute="trailing" id="wec-2D-mE8"/>
+                            <constraint firstItem="rhJ-y2-9Wt" firstAttribute="leading" secondItem="5Xf-r5-HJd" secondAttribute="leading" id="xSe-Zt-1eC"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1YV-Hv-oYC"/>
+                                <exclude reference="UrZ-hP-zrq"/>
+                                <exclude reference="rhy-TT-ymX"/>
+                                <exclude reference="lma-IP-5dP"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="31s-nS-Geu">
                         <nil key="title"/>
@@ -88,5 +100,6 @@
     <resources>
         <image name="db_tap" width="240" height="200"/>
         <image name="myo" width="22" height="22"/>
+        <image name="myo-arm" width="979" height="1547"/>
     </resources>
 </document>

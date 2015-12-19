@@ -3,7 +3,7 @@ import Parse
 import Gifu
 import AVFoundation
 
-class MyoViewController: UIViewController {
+class MyoViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     @IBOutlet weak var imageWrapper: UIView!
     @IBOutlet weak var backgroundImage: UIImageView!
@@ -16,17 +16,22 @@ class MyoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        makeBlur()
+        synth.delegate = self
         installNSNotifications()
-//        NSTimer.scheduledTimerWithTimeInterval(6, target: self, selector: "updateImageGif", userInfo: nil, repeats: true)
+//        soundTest()
     }
     
-    deinit {
-        imageView.removeFromSuperview()
+    func speechSynthesizer(synthesizer: AVSpeechSynthesizer, didFinishSpeechUtterance utterance: AVSpeechUtterance) {
+        self.isLocked = false
+        print("done")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    private func soundTest() {
+        textToSpeach("some text goes here")
     }
     
     func updateImageGif() {
@@ -68,7 +73,7 @@ class MyoViewController: UIViewController {
         let pose = notification.userInfo![kTLMKeyPose]!
         var sensor = ""
         var tag = 0
-        
+        print(isLocked)
         if isLocked == true {
             return
         }
@@ -118,6 +123,7 @@ class MyoViewController: UIViewController {
     
     private func textToSpeach(text: String) {
         print(text)
+        self.isLocked = true
         let voices = AVSpeechSynthesisVoice.speechVoices()
         myUtterance.voice = voices.filter { $0.language == "en-US" }.first!
         myUtterance = AVSpeechUtterance(string: text)
@@ -138,7 +144,7 @@ class MyoViewController: UIViewController {
                     self.textToSpeach(text == nil ? "" : text!)
                 }
             }
-            self.isLocked = false
+//            self.isLocked = false
         }
     }
     
@@ -167,7 +173,8 @@ class MyoViewController: UIViewController {
     private func makeBlur() {
         imageView = AnimatableImageView(frame: CGRect(x: 0, y: 0, width: 400, height: 255))
         imageView.center = view.center
-        imageView.animateWithImage(named: "wave-in.gif")
+        let name = Int(arc4random_uniform(5))
+        imageView.animateWithImage(named: gifs[name])
         imageView.contentMode = UIViewContentMode.ScaleAspectFill
         imageView.alpha = 1
         
