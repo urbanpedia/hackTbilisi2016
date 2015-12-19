@@ -97,8 +97,29 @@ class TextFeedViewController: UIViewController, UITableViewDelegate, UITableView
         performSegueWithIdentifier("edit", sender: self)
     }
     
-    @IBAction func GoToCreate(sender: UIBarButtonItem) {
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let deleteButton = UITableViewRowAction(style: .Default, title: "Delete", handler: { (action, indexPath) in
+            self.tableView.dataSource?.tableView?(
+                self.tableView,
+                commitEditingStyle: .Delete,
+                forRowAtIndexPath: indexPath
+            )
+            
+            return
+        })
+        
+        deleteButton.backgroundColor = UIColor(red: 255/255, green: 99/255, blue: 71/255, alpha: 1)
+        
+        return [deleteButton]
+    }
+    
+    @IBAction func goToCreate(sender: UIBarButtonItem) {
         performSegueWithIdentifier("create", sender: self)
+    }
+    
+    
+    @IBAction func goToMyo(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("myo", sender: self)
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -110,6 +131,9 @@ class TextFeedViewController: UIViewController, UITableViewDelegate, UITableView
             let controller = segue.destinationViewController as! CreateOrEditViewController
             controller.delegate = self
             controller.model = model[tableView.indexPathForSelectedRow!.row]
+        }
+        else if segue.identifier == "myo" {
+            let controller = segue.destinationViewController as! MyoViewController
         }
     }
     

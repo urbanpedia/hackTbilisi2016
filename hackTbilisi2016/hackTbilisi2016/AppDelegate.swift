@@ -8,6 +8,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        TLMHub.sharedHub()
+        TLMHub.sharedHub().lockingPolicy = TLMLockingPolicy.None
+        
         Parse.enableLocalDatastore()
         Parse.setApplicationId("SIGglSWAFukWaevXlp1LPyKd95UELixAaTTkdXks",
             clientKey: "YgRIZIL992PWQM8k5GOFlvew0aXOM4ePJu99pjm2")

@@ -31,6 +31,12 @@
 		3920431F1C248C5300E74AA4 /* TextFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3920431E1C248C5300E74AA4 /* TextFeedViewController.swift */; };
 		392043221C248D8E00E74AA4 /* TextFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392043211C248D8E00E74AA4 /* TextFeedModel.swift */; };
 		392043241C248DA800E74AA4 /* TextFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392043231C248DA800E74AA4 /* TextFeedTableViewCell.swift */; };
+		395FA1971C25287000D7FCD0 /* myo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 395FA1951C25287000D7FCD0 /* myo.storyboard */; };
+		395FA19B1C2528C900D7FCD0 /* MyoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 395FA19A1C2528C900D7FCD0 /* MyoViewController.swift */; };
+		395FA19E1C2535A100D7FCD0 /* double-tap.gif in Resources */ = {isa = PBXBuildFile; fileRef = 395FA19D1C2535A100D7FCD0 /* double-tap.gif */; };
+		395FA1A01C253D1700D7FCD0 /* MyoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395FA19F1C253D1700D7FCD0 /* MyoKit.framework */; };
+		395FA1A21C253D2E00D7FCD0 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395FA1A11C253D2E00D7FCD0 /* CoreBluetooth.framework */; };
+		395FA1A71C25518500D7FCD0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 395FA1A61C25518500D7FCD0 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +87,13 @@
 		3920431E1C248C5300E74AA4 /* TextFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFeedViewController.swift; sourceTree = "<group>"; };
 		392043211C248D8E00E74AA4 /* TextFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFeedModel.swift; sourceTree = "<group>"; };
 		392043231C248DA800E74AA4 /* TextFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFeedTableViewCell.swift; sourceTree = "<group>"; };
+		395FA1961C25287000D7FCD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/myo.storyboard; sourceTree = "<group>"; };
+		395FA19A1C2528C900D7FCD0 /* MyoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyoViewController.swift; sourceTree = "<group>"; };
+		395FA19D1C2535A100D7FCD0 /* double-tap.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "double-tap.gif"; sourceTree = "<group>"; };
+		395FA19F1C253D1700D7FCD0 /* MyoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MyoKit.framework; sourceTree = "<group>"; };
+		395FA1A11C253D2E00D7FCD0 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		395FA1A31C253D4400D7FCD0 /* hackTbilisi2016-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hackTbilisi2016-Bridging-Header.h"; sourceTree = "<group>"; };
+		395FA1A61C25518500D7FCD0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +101,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395FA1A71C25518500D7FCD0 /* AVFoundation.framework in Frameworks */,
+				395FA1A21C253D2E00D7FCD0 /* CoreBluetooth.framework in Frameworks */,
 				3920431D1C2489FE00E74AA4 /* libsqlite3.tbd in Frameworks */,
 				3920431B1C2489F700E74AA4 /* libz.tbd in Frameworks */,
 				392043191C2489EF00E74AA4 /* SystemConfiguration.framework in Frameworks */,
+				395FA1A01C253D1700D7FCD0 /* MyoKit.framework in Frameworks */,
 				392043171C2489E700E74AA4 /* StoreKit.framework in Frameworks */,
 				392043151C2489E000E74AA4 /* Security.framework in Frameworks */,
 				392043131C2489D900E74AA4 /* QuartzCore.framework in Frameworks */,
@@ -128,20 +144,32 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
-		390A45B01C24D52300B67D49 /* Controllers */ = {
+		390A45B01C24D52300B67D49 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				3920431E1C248C5300E74AA4 /* TextFeedViewController.swift */,
 				390A45A81C249A9000B67D49 /* CreateOrEditViewController.swift */,
+				395FA19A1C2528C900D7FCD0 /* MyoViewController.swift */,
 			);
-			name = Controllers;
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		390A45B11C24E69600B67D49 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				392043231C248DA800E74AA4 /* TextFeedTableViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		392042CC1C24893A00E74AA4 = {
 			isa = PBXGroup;
 			children = (
+				395FA1A61C25518500D7FCD0 /* AVFoundation.framework */,
+				395FA1A11C253D2E00D7FCD0 /* CoreBluetooth.framework */,
 				3920431C1C2489FE00E74AA4 /* libsqlite3.tbd */,
 				3920431A1C2489F700E74AA4 /* libz.tbd */,
+				395FA19F1C253D1700D7FCD0 /* MyoKit.framework */,
 				392043181C2489EF00E74AA4 /* SystemConfiguration.framework */,
 				392043161C2489E700E74AA4 /* StoreKit.framework */,
 				392043141C2489E000E74AA4 /* Security.framework */,
@@ -172,16 +200,19 @@
 		392042D71C24893A00E74AA4 /* hackTbilisi2016 */ = {
 			isa = PBXGroup;
 			children = (
-				390A45B01C24D52300B67D49 /* Controllers */,
-				390A45AD1C24CCFF00B67D49 /* Helper */,
-				392043201C248D7C00E74AA4 /* Model */,
 				392042D81C24893A00E74AA4 /* AppDelegate.swift */,
+				395FA19C1C2534DF00D7FCD0 /* Gifs */,
+				390A45B01C24D52300B67D49 /* Controller */,
+				390A45B11C24E69600B67D49 /* Cell */,
+				392043201C248D7C00E74AA4 /* Model */,
+				390A45AD1C24CCFF00B67D49 /* Helper */,
 				392042DC1C24893A00E74AA4 /* Main.storyboard */,
+				395FA1951C25287000D7FCD0 /* myo.storyboard */,
 				390A45AA1C249B5B00B67D49 /* CreateOrEdit.storyboard */,
 				392042DF1C24893A00E74AA4 /* Assets.xcassets */,
 				392042E11C24893A00E74AA4 /* LaunchScreen.storyboard */,
 				392042E41C24893A00E74AA4 /* Info.plist */,
-				392043231C248DA800E74AA4 /* TextFeedTableViewCell.swift */,
+				395FA1A31C253D4400D7FCD0 /* hackTbilisi2016-Bridging-Header.h */,
 			);
 			path = hackTbilisi2016;
 			sourceTree = "<group>";
@@ -210,6 +241,14 @@
 				392043211C248D8E00E74AA4 /* TextFeedModel.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		395FA19C1C2534DF00D7FCD0 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				395FA19D1C2535A100D7FCD0 /* double-tap.gif */,
+			);
+			name = Gifs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +313,7 @@
 		392042CD1C24893A00E74AA4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = hackTbilisi;
 				TargetAttributes = {
@@ -319,6 +358,8 @@
 				392042E31C24893A00E74AA4 /* LaunchScreen.storyboard in Resources */,
 				390A45AC1C249B5B00B67D49 /* CreateOrEdit.storyboard in Resources */,
 				392042E01C24893A00E74AA4 /* Assets.xcassets in Resources */,
+				395FA19E1C2535A100D7FCD0 /* double-tap.gif in Resources */,
+				395FA1971C25287000D7FCD0 /* myo.storyboard in Resources */,
 				392042DE1C24893A00E74AA4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +391,7 @@
 				392042D91C24893A00E74AA4 /* AppDelegate.swift in Sources */,
 				3920431F1C248C5300E74AA4 /* TextFeedViewController.swift in Sources */,
 				390A45AF1C24CD1000B67D49 /* RandomStringGenerator.swift in Sources */,
+				395FA19B1C2528C900D7FCD0 /* MyoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +449,14 @@
 				392042E21C24893A00E74AA4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		395FA1951C25287000D7FCD0 /* myo.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				395FA1961C25287000D7FCD0 /* Base */,
+			);
+			name = myo.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -499,7 +549,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -509,6 +561,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackTbilisi.hackTbilisi2016;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "hackTbilisi2016/hackTbilisi2016-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -516,7 +570,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -526,6 +582,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackTbilisi.hackTbilisi2016;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "hackTbilisi2016/hackTbilisi2016-Bridging-Header.h";
 			};
 			name = Release;
 		};

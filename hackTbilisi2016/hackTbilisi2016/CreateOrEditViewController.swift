@@ -57,25 +57,25 @@ class CreateOrEditViewController: UIViewController, UITextViewDelegate {
         return true
     }
     
+    // remove image from view
     @IBAction func removeLastImage(sender: UIButton) {
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         let subViewSize = imageWrapper.subviews.count
         if subViewSize > 0 {
             UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-                self.imageWrapper.subviews[subViewSize - 1].frame.origin.x = self.imageWrapper.frame.width
-                self.imageWrapper.subviews[subViewSize - 1].alpha = 0
+                self.imageWrapper.subviews.last!.frame.origin.x = self.imageWrapper.frame.width
+                self.imageWrapper.subviews.last!.alpha = 0
                 self.removeButton.hidden = false
                 }) { (bool: Bool) -> Void in
-                    self.imageWrapper.subviews[subViewSize - 1].removeFromSuperview()
+                    self.imageWrapper.subviews.last!.removeFromSuperview()
                     UIApplication.sharedApplication().endIgnoringInteractionEvents()
             }
             
-            if subViewSize == 1 {
-                removeButton.hidden = true
-            }
+            removeButton.hidden = subViewSize == 1 ? true : false
         }
     }
-    
+
+    // add action image to view
     @IBAction func addActionImage(sender: UIBarButtonItem) {
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         let index = sender.tag
@@ -98,6 +98,7 @@ class CreateOrEditViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    // try save stuff or edit
     @IBAction func Save(sender: UIBarButtonItem) {
         if inputTextView.text.isEmpty {
             alertError("Please fill text field")
@@ -111,6 +112,7 @@ class CreateOrEditViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    // alert error message
     private func alertError(message: String) {
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
